@@ -10,5 +10,7 @@ import Foundation
 // This is what the view see in the presenter.
 protocol NewsPresenterInput {
     func fetchData()
+    func populateArticles(with index: Int) -> ArticleViewItem
+    func numOfArticles() -> Int
 }
 

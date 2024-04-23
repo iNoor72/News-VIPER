@@ -9,5 +9,5 @@ import Foundation
 
 // This is what the presenter see in the view.
 protocol NewsPresenterOutput: AnyObject {
-    
+    func reloadTableView()
 }
