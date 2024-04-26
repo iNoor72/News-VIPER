@@ -20,8 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController")
         as! ViewController
         let newInteractor = NewsInteractor()
-        let newsPresenter = NewsPresenter(interactor: newInteractor, view: viewController)
+        let newsPresenter = NewsPresenter(interactor: newInteractor)
         
+        newsPresenter.view = viewController
         newInteractor.presenter = newsPresenter
         viewController.present = newsPresenter
         window?.rootViewController = UINavigationController(rootViewController: viewController)

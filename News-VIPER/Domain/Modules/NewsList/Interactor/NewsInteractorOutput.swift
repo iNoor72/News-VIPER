@@ -10,7 +10,7 @@ import Foundation
 // this is what the interactor see in the presenter
 protocol NewsInteractorOutput: AnyObject {
     
-    func didFetchArticles(articles: [Article])
+    func didFetchArticles()
     func didFetchEmptyResponse()
     func failFetch(with error: Error)
 }

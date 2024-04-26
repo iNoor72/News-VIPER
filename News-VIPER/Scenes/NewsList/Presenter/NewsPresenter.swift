@@ -10,12 +10,10 @@ import Foundation
 final class NewsPresenter: NewsPresenterInput {
     
     private var interactor: NewsInteractorInput!
-    private var articles: [Article] = []
-    private var view: NewsPresenterOutput!
+    weak var view: NewsPresenterOutput?
     
-    init(interactor: NewsInteractorInput, view: NewsPresenterOutput) {
+    init(interactor: NewsInteractorInput) {
         self.interactor = interactor
-        self.view = view
     }
     
     func fetchData() {
@@ -23,18 +21,17 @@ final class NewsPresenter: NewsPresenterInput {
     }
 
     func populateArticles(with index: Int) -> ArticleViewItem {
-        return interactor.articleViewItem(article: self.articles[index])
+        interactor.articleViewItem(at: index)
     }
     
     func numOfArticles() -> Int {
-        articles.count
+        interactor.numOfArticles()
     }
 }
 
 extension NewsPresenter: NewsInteractorOutput {
-    func didFetchArticles(articles: [Article]) {
-        self.articles = articles
-        view.reloadTableView()
+    func didFetchArticles() {
+        view?.reloadTableView()
     }
     
     func didFetchEmptyResponse() {

@@ -10,5 +10,6 @@ import Foundation
 // this is what the presenter see in interactor
 protocol NewsInteractorInput {
     func fetchCNNNews() 
-    func articleViewItem(article: Article) -> ArticleViewItem
+    func articleViewItem(at index: Int) -> ArticleViewItem
+    func numOfArticles() -> Int
 }

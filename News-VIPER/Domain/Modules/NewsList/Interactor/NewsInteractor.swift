@@ -11,7 +11,7 @@ final class NewsInteractor : NewsInteractorInput {
     
     private var networkService: NetworkServiceProtocol!
     private var articles: [Article] = []
-    var presenter: NewsInteractorOutput!
+    weak var presenter: NewsInteractorOutput?
     
     init(networkService: NetworkServiceProtocol = NetworkService()) {
         self.networkService = networkService
@@ -21,22 +21,27 @@ final class NewsInteractor : NewsInteractorInput {
         networkService.requestCNNNews { [weak self] result in
             switch result {
             case .success(let news):
-                guard let articles = news.articles else {
-                    self?.presenter.didFetchEmptyResponse()
+                guard news.articles != nil else {
+                    self?.presenter?.didFetchEmptyResponse()
                     return
                 }
-                self?.presenter.didFetchArticles(articles: articles)
+                self?.articles = news.articles ?? []
+                self?.presenter?.didFetchArticles()
             case .failure(let error):
-                self?.presenter.failFetch(with: error)
+                self?.presenter?.failFetch(with: error)
             }
         }
     }
     
     
-    func articleViewItem(article: Article) -> ArticleViewItem {
-        
+    func articleViewItem(at index: Int) -> ArticleViewItem {
+        let article = articles[index]
         let articleViewItem = ArticleViewItem(title: article.title ?? "", ImageURL: article.urlToImage ?? "")
         return articleViewItem
+    }
+    
+    func numOfArticles() -> Int {
+        articles.count
     }
 }
 

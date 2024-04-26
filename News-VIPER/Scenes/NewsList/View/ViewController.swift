@@ -9,12 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var present: NewsPresenterInput!
+    var present: NewsPresenterInput?
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        present.fetchData()
+        present?.fetchData()
     }
 }
 extension ViewController: NewsPresenterOutput {
@@ -29,12 +29,12 @@ extension ViewController: NewsPresenterOutput {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return present.numOfArticles()
+        return present?.numOfArticles() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        let article = present.populateArticles(with: indexPath.row)
+        guard let article = present?.populateArticles(with: indexPath.row) else { return UITableViewCell() }
         cell.textLabel?.text = article.title
         return cell
     }
