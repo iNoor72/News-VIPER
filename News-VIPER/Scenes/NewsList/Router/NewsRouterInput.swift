@@ -8,6 +8,6 @@
 import Foundation
 
 // this is what the presenter see in the router
-protocol NewsRouterInput {
+public protocol NewsRouterInput {
     
 }

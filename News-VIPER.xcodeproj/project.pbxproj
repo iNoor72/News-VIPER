@@ -24,6 +24,7 @@
 		87B75D312BD40AC200B13718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B75D302BD40AC200B13718 /* Assets.xcassets */; };
 		87B75D342BD40AC200B13718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B75D322BD40AC200B13718 /* LaunchScreen.storyboard */; };
 		87B75D3C2BD40BF800B13718 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B75D3B2BD40BF800B13718 /* AppConstants.swift */; };
+		87EF43192BDBE3BB009B0456 /* NewsListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EF43182BDBE3BB009B0456 /* NewsListFactory.swift */; };
 		F2C67CFDE2224AD33301CA21 /* Pods_News_VIPER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FF1E05ED9B15C329FDB7D4 /* Pods_News_VIPER.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		87B75D332BD40AC200B13718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		87B75D352BD40AC200B13718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87B75D3B2BD40BF800B13718 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		87EF43182BDBE3BB009B0456 /* NewsListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListFactory.swift; sourceTree = "<group>"; };
 		D3FF1E05ED9B15C329FDB7D4 /* Pods_News_VIPER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News_VIPER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				6028C09A2BD592F100F6C4E0 /* Router */,
 				6028C0992BD592E900F6C4E0 /* Presenter */,
 				6028C0982BD592D400F6C4E0 /* View */,
+				87EF43182BDBE3BB009B0456 /* NewsListFactory.swift */,
 			);
 			path = NewsList;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				6028C09C2BD5931400F6C4E0 /* NewsPresenter.swift in Sources */,
 				87B75D2C2BD40AC200B13718 /* ViewController.swift in Sources */,
 				6028C0AD2BD597BE00F6C4E0 /* NewsInteractorOutput.swift in Sources */,
+				87EF43192BDBE3BB009B0456 /* NewsListFactory.swift in Sources */,
 				87B75D282BD40AC200B13718 /* AppDelegate.swift in Sources */,
 				87B75D2A2BD40AC200B13718 /* SceneDelegate.swift in Sources */,
 				87B75D3C2BD40BF800B13718 /* AppConstants.swift in Sources */,

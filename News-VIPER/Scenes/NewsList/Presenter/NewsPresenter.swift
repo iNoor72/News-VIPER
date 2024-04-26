@@ -9,11 +9,13 @@ import Foundation
 
 final class NewsPresenter: NewsPresenterInput {
     
-    private var interactor: NewsInteractorInput!
+    private var router: NewsRouterInput
+    private var interactor: NewsInteractorInput
     weak var view: NewsPresenterOutput?
     
-    init(interactor: NewsInteractorInput) {
-        self.interactor = interactor
+    init(dependencies: NewsPresenterDependenciesProtocol) {
+        self.interactor = dependencies.interactor
+        self.router = dependencies.router
     }
     
     func fetchData() {

@@ -8,13 +8,13 @@
 import Foundation
 import Alamofire
 
-protocol NetworkServiceProtocol {
+public protocol NetworkServiceProtocol {
     func requestCNNNews(completion: @escaping (Result<NewsResponse, Error>) -> Void)
 }
 
-final class NetworkService: NetworkServiceProtocol {
+public final class NetworkService: NetworkServiceProtocol {
     
-    func requestCNNNews(completion: @escaping (Result<NewsResponse, Error>) -> Void ) {
+    public func requestCNNNews(completion: @escaping (Result<NewsResponse, Error>) -> Void ) {
         
         guard let url = URL(string: AppConstants.newsURL) else {
             return

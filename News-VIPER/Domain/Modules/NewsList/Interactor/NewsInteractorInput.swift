@@ -8,7 +8,7 @@
 import Foundation
 
 // this is what the presenter see in interactor
-protocol NewsInteractorInput {
+public protocol NewsInteractorInput {
     func fetchCNNNews() 
     func articleViewItem(at index: Int) -> ArticleViewItem
     func numOfArticles() -> Int

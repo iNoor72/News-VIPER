@@ -10,3 +10,7 @@ import Foundation
 final class NewsRouter {
     
 }
+
+extension NewsRouter: NewsRouterInput {
+    
+}
