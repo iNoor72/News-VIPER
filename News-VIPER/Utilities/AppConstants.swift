@@ -8,5 +8,5 @@
 import Foundation
 
 enum AppConstants {
-    static let newsURL = "https://saurav.tech/NewsAPI/everything/cnn.json"
+    static let baseURL = "https://saurav.tech/NewsAPI/everything"
 }

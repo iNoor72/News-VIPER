@@ -18,7 +18,8 @@ public final class NewsInteractor : NewsInteractorInput {
     }
     
     public func fetchCNNNews() {
-        networkService.requestCNNNews { [weak self] result in
+        let endpoint = CNNNewsEndpoint.allNews
+        networkService.fetch(endpoint: endpoint, expectedType: NewsResponse.self) { [weak self] result in
             switch result {
             case .success(let news):
                 guard news.articles != nil else {
@@ -32,7 +33,6 @@ public final class NewsInteractor : NewsInteractorInput {
             }
         }
     }
-    
     
     public func articleViewItem(at index: Int) -> ArticleViewItem {
         let article = articles[index]

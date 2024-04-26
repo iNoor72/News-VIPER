@@ -25,6 +25,9 @@
 		87B75D342BD40AC200B13718 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87B75D322BD40AC200B13718 /* LaunchScreen.storyboard */; };
 		87B75D3C2BD40BF800B13718 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B75D3B2BD40BF800B13718 /* AppConstants.swift */; };
 		87EF43192BDBE3BB009B0456 /* NewsListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EF43182BDBE3BB009B0456 /* NewsListFactory.swift */; };
+		87EF431D2BDBED9F009B0456 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EF431C2BDBED9F009B0456 /* Endpoint.swift */; };
+		87EF43202BDBF01F009B0456 /* CNNNewsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EF431F2BDBF01F009B0456 /* CNNNewsEndpoint.swift */; };
+		87EF43222BDBF170009B0456 /* BBCNewsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EF43212BDBF170009B0456 /* BBCNewsEndpoint.swift */; };
 		F2C67CFDE2224AD33301CA21 /* Pods_News_VIPER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FF1E05ED9B15C329FDB7D4 /* Pods_News_VIPER.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +54,9 @@
 		87B75D352BD40AC200B13718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87B75D3B2BD40BF800B13718 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		87EF43182BDBE3BB009B0456 /* NewsListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListFactory.swift; sourceTree = "<group>"; };
+		87EF431C2BDBED9F009B0456 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		87EF431F2BDBF01F009B0456 /* CNNNewsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNNNewsEndpoint.swift; sourceTree = "<group>"; };
+		87EF43212BDBF170009B0456 /* BBCNewsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BBCNewsEndpoint.swift; sourceTree = "<group>"; };
 		D3FF1E05ED9B15C329FDB7D4 /* Pods_News_VIPER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News_VIPER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,7 +100,8 @@
 		6028C0912BD5914400F6C4E0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				6028C0922BD5918700F6C4E0 /* NetworkService.swift */,
+				87EF431B2BDBEC29009B0456 /* Database */,
+				87EF431A2BDBEC25009B0456 /* Network */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -212,6 +219,40 @@
 				87B75D352BD40AC200B13718 /* Info.plist */,
 			);
 			path = "News-VIPER";
+			sourceTree = "<group>";
+		};
+		87EF431A2BDBEC25009B0456 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				87EF43232BDBF573009B0456 /* Protocols */,
+				87EF431E2BDBF019009B0456 /* Endpoints */,
+				6028C0922BD5918700F6C4E0 /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		87EF431B2BDBEC29009B0456 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		87EF431E2BDBF019009B0456 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				87EF431F2BDBF01F009B0456 /* CNNNewsEndpoint.swift */,
+				87EF43212BDBF170009B0456 /* BBCNewsEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		87EF43232BDBF573009B0456 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				87EF431C2BDBED9F009B0456 /* Endpoint.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		A46E1288E44D8F3E5FB54D59 /* Frameworks */ = {
@@ -349,6 +390,7 @@
 				6028C09E2BD593B600F6C4E0 /* NewsPresenterInput.swift in Sources */,
 				6028C0932BD5918700F6C4E0 /* NetworkService.swift in Sources */,
 				6028C0972BD5926600F6C4E0 /* NewResponse.swift in Sources */,
+				87EF43222BDBF170009B0456 /* BBCNewsEndpoint.swift in Sources */,
 				6028C0A22BD595B000F6C4E0 /* NewsRouter.swift in Sources */,
 				6028C09C2BD5931400F6C4E0 /* NewsPresenter.swift in Sources */,
 				87B75D2C2BD40AC200B13718 /* ViewController.swift in Sources */,
@@ -356,7 +398,9 @@
 				87EF43192BDBE3BB009B0456 /* NewsListFactory.swift in Sources */,
 				87B75D282BD40AC200B13718 /* AppDelegate.swift in Sources */,
 				87B75D2A2BD40AC200B13718 /* SceneDelegate.swift in Sources */,
+				87EF431D2BDBED9F009B0456 /* Endpoint.swift in Sources */,
 				87B75D3C2BD40BF800B13718 /* AppConstants.swift in Sources */,
+				87EF43202BDBF01F009B0456 /* CNNNewsEndpoint.swift in Sources */,
 				6028C0A02BD594CE00F6C4E0 /* NewsPresenterOutput.swift in Sources */,
 				6028C0A42BD5965900F6C4E0 /* NewsRouterInput.swift in Sources */,
 				6028C0A92BD5974500F6C4E0 /* NewsInteractor.swift in Sources */,
