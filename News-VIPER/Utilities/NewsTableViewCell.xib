@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTableViewCell" rowHeight="138" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="News_VIPER" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="657" height="136"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="657" height="136"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4m1-gl-OYH">
+                        <rect key="frame" x="8" y="0.0" width="633" height="130"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BZj-DC-pzD">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="ZDx-aI-nH9"/>
+                                    <constraint firstAttribute="width" constant="150" id="cEh-7r-oeN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo3-ct-yKj">
+                                <rect key="frame" x="162" y="0.0" width="435" height="130"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMF-nd-eSB">
+                                <rect key="frame" x="609" y="0.0" width="24" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="2dP-ME-ptV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="4m1-gl-OYH" secondAttribute="trailing" constant="16" id="MWE-Wu-1jX"/>
+                    <constraint firstItem="4m1-gl-OYH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Oiq-iF-dt3"/>
+                    <constraint firstItem="4m1-gl-OYH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="WQJ-M8-MfJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="favButton" destination="zMF-nd-eSB" id="MKA-li-Jno"/>
+                <outlet property="newsImageView" destination="BZj-DC-pzD" id="HMF-kn-8AJ"/>
+                <outlet property="newsLabel" destination="Jo3-ct-yKj" id="XQv-Dl-azu"/>
+            </connections>
+            <point key="canvasLocation" x="400.76335877862596" y="-10.563380281690142"/>
+        </tableViewCell>
+    </objects>
+</document>

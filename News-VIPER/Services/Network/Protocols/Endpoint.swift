@@ -28,7 +28,7 @@ extension Endpoint {
     }
     
     var requestURL: URL {
-        baseURL.appendingPathExtension(path)
+        baseURL.appendingPathComponent(path)
     }
     
     var encoding: ParameterEncoding {

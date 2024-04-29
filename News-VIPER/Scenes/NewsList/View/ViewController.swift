@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UINib(nibName: AppStrings.newsTableViewCellIdenetifier, bundle: nil), forCellReuseIdentifier: AppStrings.newsTableViewCellIdenetifier)
         present?.fetchData()
     }
 }
@@ -33,11 +35,21 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AppStrings.newsTableViewCellIdenetifier, for: indexPath) as? NewsTableViewCell else {
+            return UITableViewCell()
+        }
         guard let article = present?.populateArticles(with: indexPath.row) else { return UITableViewCell() }
-        cell.textLabel?.text = article.title
+        cell.setLabelText(with: article.title)
+        cell.newsImageView.sd_setImage(with: URL(string: article.ImageURL), placeholderImage: UIImage(named: "placeholder-image.png"))
         return cell
     }
     
+}
+
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
+    }
 }
 

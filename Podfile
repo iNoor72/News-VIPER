@@ -7,4 +7,5 @@ target 'News-VIPER' do
 
   # Pods for News-VIPER
 pod 'Alamofire'
+pod 'SDWebImage'
 end
