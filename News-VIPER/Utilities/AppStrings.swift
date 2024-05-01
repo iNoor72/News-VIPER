@@ -9,6 +9,8 @@ import Foundation
 
 enum AppStrings {
     static let mainStoryBoard = "Main"
-    static let viewControllerIdentifier = "ViewController"
-    static let newsTableViewCellIdenetifier = "NewsTableViewCell"
+    struct ViewControllerStrings {
+        static let viewControllerIdentifier = "ViewController"
+        static let newsTableViewCellIdenetifier = "NewsTableViewCell"
+    }
 }

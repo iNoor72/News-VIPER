@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UINib(nibName: AppStrings.newsTableViewCellIdenetifier, bundle: nil), forCellReuseIdentifier: AppStrings.newsTableViewCellIdenetifier)
+        self.tableView.register(UINib(nibName: AppStrings.ViewControllerStrings.newsTableViewCellIdenetifier, bundle: nil), forCellReuseIdentifier: AppStrings.ViewControllerStrings.newsTableViewCellIdenetifier)
         present?.fetchData()
     }
 }
@@ -35,7 +35,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: AppStrings.newsTableViewCellIdenetifier, for: indexPath) as? NewsTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AppStrings.ViewControllerStrings.newsTableViewCellIdenetifier, for: indexPath) as? NewsTableViewCell else {
             return UITableViewCell()
         }
         guard let article = present?.populateArticles(with: indexPath.row) else { return UITableViewCell() }

@@ -14,7 +14,7 @@ protocol NewsListFactoryProtocol {
 final class NewsListFactory: NewsListFactoryProtocol {
     
     func makeView() -> UIViewController {
-        let viewController = UIStoryboard(name: AppStrings.mainStoryBoard, bundle: nil).instantiateViewController(withIdentifier: AppStrings.viewControllerIdentifier) as! ViewController
+        let viewController = UIStoryboard(name: AppStrings.mainStoryBoard, bundle: nil).instantiateViewController(withIdentifier: AppStrings.ViewControllerStrings.viewControllerIdentifier) as! ViewController
         
         let newsRouter = NewsRouter()
         
