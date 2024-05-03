@@ -12,4 +12,6 @@ public protocol NewsInteractorInput {
     func fetchCNNNews() 
     func articleViewItem(at index: Int) -> ArticleViewItem
     func numOfArticles() -> Int
+    func saveAritcle(at index: Int)
+    func fetchSavedArticles()
 }

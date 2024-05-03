@@ -40,6 +40,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="didFavouriteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aAv-ZT-1SV"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>

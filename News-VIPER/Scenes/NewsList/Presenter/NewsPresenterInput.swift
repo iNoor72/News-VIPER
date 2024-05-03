@@ -12,5 +12,7 @@ protocol NewsPresenterInput {
     func fetchData()
     func populateArticles(with index: Int) -> ArticleViewItem
     func numOfArticles() -> Int
+    func favouriteButtonToggle(index: Int)
+    func fetchAllSavedArticles()
 }
 
