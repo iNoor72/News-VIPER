@@ -18,7 +18,7 @@ final class NewsListFactory: NewsListFactoryProtocol {
         
         let newsRouter = NewsRouter()
         
-        let interactorDependencies = NewsInteractorDependencies(network: NetworkService())
+        let interactorDependencies = NewsInteractorDependencies(network: NetworkService(), coreDataManager: CoreDataManager.shared)
         let newInteractor = NewsInteractor(dependencies: interactorDependencies)
         
         let presenterDependencies = NewsPresenterDependencies(
@@ -35,12 +35,14 @@ final class NewsListFactory: NewsListFactoryProtocol {
     }
 }
 
-public protocol NewsInteractorDependenciesProtocol {
+protocol NewsInteractorDependenciesProtocol {
     var network: NetworkService { get }
+    var coreDataManager: CoreDataManagerProtocol { get }
 }
 
 struct NewsInteractorDependencies: NewsInteractorDependenciesProtocol {
     let network: NetworkService
+    let coreDataManager: CoreDataManagerProtocol
 }
 
 public protocol NewsPresenterDependenciesProtocol {

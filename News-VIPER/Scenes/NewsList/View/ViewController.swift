@@ -39,8 +39,13 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         guard let article = present?.populateArticles(with: indexPath.row) else { return UITableViewCell() }
-        cell.setLabelText(with: article.title)
+        cell.configureCell(with: article)
         cell.newsImageView.sd_setImage(with: URL(string: article.ImageURL), placeholderImage: UIImage(named: "placeholder-image.png"))
+        cell.favouriteButtonTapped = { [weak self] cell in
+            guard let index = self?.tableView.indexPath(for: cell) else { return }
+            self?.present?.favouriteButtonToggle(index: index.row)
+            self?.tableView.reloadData()
+        }
         return cell
     }
     

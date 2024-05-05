@@ -11,10 +11,13 @@ public final class NewsInteractor : NewsInteractorInput {
     
     private var networkService: NetworkServiceProtocol!
     private var articles: [Article] = []
+    private var savedArticles: [ArticleCoreData] = []
+    private var coreDataManager: CoreDataManagerProtocol!
     weak var presenter: NewsInteractorOutput?
     
     init(dependencies: NewsInteractorDependenciesProtocol) {
         self.networkService = dependencies.network
+        self.coreDataManager = dependencies.coreDataManager
     }
     
     public func fetchCNNNews() {
@@ -36,16 +39,36 @@ public final class NewsInteractor : NewsInteractorInput {
     
     public func articleViewItem(at index: Int) -> ArticleViewItem {
         let article = articles[index]
-        let articleViewItem = ArticleViewItem(title: article.title ?? "", ImageURL: article.urlToImage ?? "")
+        var articleViewItem = ArticleViewItem(title: article.title ?? "", ImageURL: article.urlToImage ?? "")
+        for savedArticle in savedArticles {
+            if savedArticle.title == article.title {
+                articleViewItem.isSaved = true
+                break
+            }
+        }
         return articleViewItem
     }
     
     public func numOfArticles() -> Int {
         articles.count
     }
+    
+    public func saveAritcle(at index: Int) {
+        coreDataManager.add(entityType: ArticleCoreData.self, mapper: ArticlesModelMapper(article: articles[index]))
+    }
+    
+    public func fetchSavedArticles() {
+        switch coreDataManager.fetch(request: ArticleCoreData.fetchRequest()) {
+        case .success(let articles):
+            self.savedArticles = articles
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
+    }
 }
 
 public struct ArticleViewItem {
     let title: String
     let ImageURL: String
+    var isSaved: Bool = false
 }

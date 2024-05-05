@@ -20,6 +20,7 @@ final class NewsPresenter: NewsPresenterInput {
     
     func fetchData() {
         self.interactor.fetchCNNNews()
+        self.interactor.fetchSavedArticles()
     }
 
     func populateArticles(with index: Int) -> ArticleViewItem {
@@ -28,6 +29,15 @@ final class NewsPresenter: NewsPresenterInput {
     
     func numOfArticles() -> Int {
         interactor.numOfArticles()
+    }
+    
+    func favouriteButtonToggle(index: Int) {
+        interactor.saveAritcle(at: index)
+        interactor.fetchSavedArticles()
+    }
+    
+    func fetchAllSavedArticles() {
+        interactor.fetchSavedArticles()
     }
 }
 
